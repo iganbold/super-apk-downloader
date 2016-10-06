@@ -1,0 +1,19 @@
+#!/bin/bash
+# Super APK downloader
+
+exec() {
+  apk_var=com.imoblife.tus
+
+  casperjs apk_installer.js --apk=$apk_var
+
+  if [ $? -eq 0 ]
+  then
+    echo "Find apk path, copy the apk file and uninstall it"
+    node copy_uninstall.js $apk_var
+  else
+    echo "Could not install: $apk_var" >&2
+  fi
+
+}
+
+exec
