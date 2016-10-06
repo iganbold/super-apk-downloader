@@ -2,8 +2,8 @@
 # Super APK downloader
 
 exec() {
-  apk_var=com.imoblife.tus
-
+  apk_var=$1
+ 
   casperjs apk_installer.js --apk=$apk_var
 
   if [ $? -eq 0 ]
@@ -16,4 +16,9 @@ exec() {
 
 }
 
-exec
+if [ "$1" != "" ]; then
+    echo "APK: $1"
+    exec $1
+else
+    echo "no apk prameter"
+fi
