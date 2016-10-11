@@ -3,15 +3,16 @@
 
 exec() {
   apk_var=$1
- 
+
   casperjs apk_installer.js --apk=$apk_var
 
   if [ $? -eq 0 ]
   then
     echo "Find apk path, copy the apk file and uninstall it"
+    mkdir ./apks/$apk_var
     node copy_uninstall.js $apk_var
   else
-    echo "Could not install: $apk_var" >&2
+    echo "Could not install: $apk_var"
   fi
 
 }
@@ -22,3 +23,10 @@ if [ "$1" != "" ]; then
 else
     echo "no apk prameter"
 fi
+
+# while IFS='' read -r line
+# do
+#     echo "Text read from file: $line"
+#     (. exec $line)
+#
+# done < "$1"

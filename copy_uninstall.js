@@ -3,7 +3,7 @@
 var cmd=require('node-cmd');
 
 var apk = process.argv[2];
-var apkLocation = '/data/app/'+apk+'-1.apk ./apks';
+var apkLocation = '/data/app/'+apk+'-1/base.apk ./apks/'+apk+'/';
 
 
 function copyApk() {

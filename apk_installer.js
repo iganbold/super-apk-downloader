@@ -4,7 +4,7 @@ var casper = require('casper').create({verbose: true});
 
 //Config
 var apk = casper.cli.get('apk');
-var username = 'super.apk.downloader@gmail.com';
+var username = 'super.apk.downloader2@gmail.com';
 var password = 'Apk@12345';
 var screenshotFolderName = 'screenshots/';
 var googleLoginURL = 'https://accounts.google.com/Login?hl=EN';
@@ -64,7 +64,7 @@ casper.then(function() {
          document.querySelectorAll('.info-container button')[1].click() // Selector maybe changed in the future b/c google update
     });
 
-}).wait(5000).then(function() {
+}).wait(10000).then(function() {
     this.capture(screenshotFolderName+'install1'+screenshotName+'.png');
 });
 
@@ -72,7 +72,7 @@ casper.then(function() {
 // Click on second install button
 casper.then(function () {
     this.click('#purchase-ok-button')                                   // Selector maybe changed in the future b/c google update
-}).wait(3000).then(function() {
+}).wait(5000).then(function() {
     this.capture(screenshotFolderName+'install2'+screenshotName+'.png');
     this.echo('Installed');
 });
