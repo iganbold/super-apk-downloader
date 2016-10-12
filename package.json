@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "install": "^0.8.1",
+    "line-by-line": "^0.1.5",
     "node-cmd": "^1.1.1",
     "npm": "^3.10.8"
   }
